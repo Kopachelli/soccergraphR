@@ -8,7 +8,7 @@ Description: A partir de los ficheros proporcionados por OPTA en formato XML per
 License: GLP-2
 Encoding: ISO-8859-2
 LazyData: true
-Imports: ggplot2,XML,readr,ggforce,dplyr
+Imports: ggplot2,XML,readr,ggforce,dplyr,pdp
 RoxygenNote: 6.1.1
 Suggests: knitr,rmarkdown
 VignetteBuilder: knitr
