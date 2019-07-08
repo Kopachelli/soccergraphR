@@ -1,7 +1,7 @@
 soccergraphR
 ================
 Jesús Lagos @Vdot\_spain <jelagmil@gmail.com>
-2019-07-07
+2019-07-08
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 La libreria soccergraphR esta pensada para todos aquellos que trabajen con los datos de OPTA y para que las personas que estén estudiando o quieran conocer los datos puedan analizarlos y hacer visualizaciones y análisis de los mismos. Con esta libreria podrás:
@@ -23,6 +23,11 @@ Para poder probar las funciones de la libreria se ha instalado en `..\R\R-3.5.1\
 -   f28. Es el XML de posesiones
 -   Stats. Es el XML con las estadísticas de toda la temporada de un equipo
 -   SRML. Es el XMl con estadísticas de un partido
+
+Versiones
+=========
+
+Versión 0.1.1 - Se corregido la leyenda de OptaMAPcontras - Se ha cambiado OptaMAPcorner por flechas - Se ha añadido la función OptaMAParrowpass para visualizar pases como flechas por jugador - Actualizado las viñetas, ayudas y Readme - Se ha mejorado OptaMAPshoot marcando el pie izquierdo y derecho del tirador - Se ha añadido la función OptaMAPshoot2 que visualiza los disparos desde una vista aérea - Se han ajustado los radar plot por posición
 
 Instalación y Ayuda
 -------------------
@@ -47,6 +52,7 @@ vignette("my-vignette")
 Para conocer cada función y como se usa cada una también puedes usar "?" seguido de la función para mostrar la ayuda en la pestaña de Help de RStudio. Si apretas F1 con el cursor puesto en la función también se despliega en la ayuda:
 
 ``` r
+?OptaMAParrowpass
 ?OptaMAPcontras
 ?OptaMAPcorner
 ?OptaMAPdfrontpass
@@ -58,7 +64,8 @@ Para conocer cada función y como se usa cada una también puedes usar "?" segui
 ?OptaMAPposesion
 ?OptaMAPposesionzonal
 ?OptaMAPradarevent
-?OptaMAPshoot 
+?OptaMAPshoot
+?OptaMAPshoot2
 ?OptaXMLeventos
 ?OptaXMLpassmatrix
 ?OptaXMLposesion
@@ -152,7 +159,7 @@ OptaMAPcorner(df,1)
 
 Y quedaría:
 
-<img src="vignettes/8.png" width="100%" />
+<img src="vignettes/8_1.png" width="100%" />
 
 OptaMAPdirectpass
 -----------------
@@ -201,6 +208,25 @@ Zonas desde donde pasan los jugadores
 Zonas adonde pasan los jugadores
 </p>
 
+OptaMAParrowpass
+----------------
+
+Con estas funciones `OptaMAParrowpass(df,1)` podrás visualizar un mapa por jugador con su mapa de pases en función de su tipologia
+
+``` r
+#Pon la ruta donde tengas instsalada la libreria en mi caso:
+ruta_eventos<-c('C:/My Program Files/R/R-3.5.1/library/soccergraphR/data/f24.xml')
+df<-OptaXMLeventos(ruta_eventos)
+OptaMAParrowpass(df,1)
+```
+
+El df será el parseado con la función OPTAXMLEVENTOS
+
+<img src="vignettes/25.png" alt="Zonas desde donde pasan los jugadores" width="100%" />
+<p class="caption">
+Zonas desde donde pasan los jugadores
+</p>
+
 OptaMAPshoot
 ------------
 
@@ -217,7 +243,25 @@ OptaMAPshoot(df,1)
 
 Y quedaría:
 
-<img src="soccergraphR/vignettes/5.png" width="100%" />
+<img src="vignettes/5_1.png" width="100%" />
+
+OptaMAPshoot2
+-------------
+
+Con esta función `OptaMAPshoot2(df,1))` podrás visualizar desde arriba los disparos realizados
+
+El df será el parseado con la función OPTAXMLEVENTOS:
+
+``` r
+#Pon la ruta donde tengas instsalada la libreria en mi caso:
+ruta_eventos<-c('C:/My Program Files/R/R-3.5.1/library/soccergraphR/data/f24.xml')
+df<-OptaXMLeventos(ruta_eventos)
+OptaMAPshoot2(df,1)
+```
+
+Y quedaría:
+
+<img src="vignettes/5_2.png" width="100%" />
 
 OPTAXMLPOSESION
 ---------------
@@ -246,7 +290,7 @@ OptaMAPposesion(df)
 
 Y quedaría:
 
-<img src="soccergraphR/vignettes/9.png" width="100%" />
+<img src="vignettes/9.png" width="100%" />
 
 OptaMAPposesionzonal
 --------------------
@@ -409,5 +453,4 @@ FUTURAS MEJORAS
 ---------------
 
 -   INCLUIR UN MAPA CON EL MODELO XG (GOLES ESPERADOS)
--   GRÁFICO DE DENSIDADES POR PASES MÍNIMOS
 -   ANALIZAR EL RESTO DE FICHEROS
