@@ -27,7 +27,15 @@ Para poder probar las funciones de la libreria se ha instalado en `..\R\R-3.5.1\
 Versiones
 =========
 
-Versión 0.1.1 - Se corregido la leyenda de OptaMAPcontras - Se ha cambiado OptaMAPcorner por flechas - Se ha añadido la función OptaMAParrowpass para visualizar pases como flechas por jugador - Actualizado las viñetas, ayudas y Readme - Se ha mejorado OptaMAPshoot marcando el pie izquierdo y derecho del tirador - Se ha añadido la función OptaMAPshoot2 que visualiza los disparos desde una vista aérea - Se han ajustado los radar plot por posición
+Versión 0.1.1 
+-------------
+- Se corregido la leyenda de OptaMAPcontras 
+- Se ha cambiado OptaMAPcorner por flechas 
+- Se ha añadido la función OptaMAParrowpass para visualizar pases como flechas por jugador 
+- Actualizado las viñetas, ayudas y Readme 
+- Se ha mejorado OptaMAPshoot marcando el pie izquierdo y derecho del tirador 
+- Se ha añadido la función OptaMAPshoot2 que visualiza los disparos desde una vista aérea 
+- Se han ajustado los radar plot por posición
 
 Instalación y Ayuda
 -------------------
