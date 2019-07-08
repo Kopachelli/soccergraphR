@@ -12,15 +12,18 @@
 OptaMAPshoot <- function(df,home){
 
   #Nos quedamos con los campos que nos interesan
-  shots<-dplyr::select(df,type_id,team_id,outcome,x,y,player_id,"102","103","home_team_id","away_team_id")
+  shots<-dplyr::select(df,type_id,team_id,outcome,x,y,player_id,"102","103","home_team_id","away_team_id","15","20","72")
   #cambiamos los nombres de las columnas
-  names(shots)<-c("type_id","team_id","outcome","x","y","player_id","a","b","c","d")
+  names(shots)<-c("type_id","team_id","outcome","x","y","player_id","a","b","c","d","head","der","izq")
 
   #Convertimos a numerico los Factor
   shots$a <- as.numeric(as.character(shots$a))
   shots$b <- as.numeric(as.character(shots$b))
   shots$c <- as.numeric(as.character(shots$c))
   shots$d <- as.numeric(as.character(shots$d))
+  shots$head <- as.numeric(as.character(shots$head))
+  shots$der <- as.numeric(as.character(shots$der))
+  shots$izq <- as.numeric(as.character(shots$izq))
 
   #Gestionamos la selección de Local o Visitante
   if(home==1){
@@ -57,6 +60,16 @@ OptaMAPshoot <- function(df,home){
 
     )
     )
+
+
+  shots<-shots %>%
+    dplyr::mutate(Remate = case_when(
+      der==-1 ~ "Pie Der",
+      izq==-1 ~ "Pie Izq",
+      head==-1 ~ "Cabeza"
+    )
+    )
+
 
   #Creamos la plantilla del tema del gráfico (esto es de soccermatics con algunos cambios)
     theme_blankPitch = function(size=12) {
@@ -110,11 +123,11 @@ OptaMAPshoot <- function(df,home){
     geom_segment(aes(x = 48.2, y = 0, xend = 48.2, yend = 3.1964),colour = "#000000",size=0.5,linetype='dashed') +
     geom_segment(aes(x = 65, y = 0, xend = 35, yend = 0),colour = "#000000",size=0.5,linetype='solid') +
     #Pintamos los puntos ajustando a las escalas del dibujo
-    geom_point(data = shots,aes(x = ((a)),y = ((b)/15.57)*1.31,color=Tipo_tiro,size=-Dist_Shoot,stroke = 1)) +
-    guides(colour = guide_legend(override.aes = list(size=5))) +
+    geom_point(data = shots,aes(x = ((a)),y = ((b)/15.57)*1.31,color=Tipo_tiro,size=-Dist_Shoot,shape=Remate,stroke = 1)) +
+    guides(colour = guide_legend(override.aes = list(size=5)),size = guide_legend(override.aes = list(size=5))) +
     scale_radius("Distancia",breaks=c(-5,-11,-20,-50),labels=c('Menos de 5m','Menos de 11m','Menos de 20m','Mas de 20m')) +
     theme(legend.position="bottom") +
-    labs(shape="Distancia", colour="Tiro")+
+    labs(shape='Remate',size="Distancia", colour="Tiro")+
     coord_fixed()
 
   return(p)

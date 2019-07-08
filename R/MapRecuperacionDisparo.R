@@ -89,9 +89,9 @@ recup4<-recup3 %>%
 h <- OptaMAPcampofutbol()
 p <- h +
   ggtitle(("\nMapa de recuperacion y tiro asociado")) +
+  geom_segment(data=recup4,aes(x = x.x*106, y = y.x*70.4, xend = xS*106, yend = yS*70.4),colour = "#000000", size = 1,arrow = arrow(length = unit(0.03, "npc"))) +
   geom_point(data = recup4,aes(x = x.x*106,y = y.x*70.4,colour=Tipo_Recup,fill=Tipo_Recup),size=3,stroke = 1) +
-  geom_point(data = recup4,aes(x = xS*106,y = yS*70.4,colour=Tipo_Tiro,fill=Tipo_Tiro,size=-(10600-xS*106)),stroke = 1) +
-  geom_segment(data=recup4,aes(x = x.x*106, y = y.x*70.4, xend = xS*106, yend = yS*70.4),colour = "#000000", size = 1) +
+  geom_point(data = recup4,aes(x = xS*106,y = yS*70.4,colour=Tipo_Tiro,fill=Tipo_Tiro),stroke = 1) +
   geom_text(data = recup4,aes(x = xS*106,y = (yS+10)*70.4,label=tiempo), colour="white") +
   theme(legend.position="bottom")
 

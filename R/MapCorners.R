@@ -59,8 +59,8 @@ OptaMAPcorner <- function(df,home){
   #creamos un campo único con la parte del cuerpo del tiro
   polar2<-polar2 %>%
     dplyr::mutate(Remate = case_when(
-      der==-1 ~ "Pie",
-      izq==-1 ~ "Pie",
+      der==-1 ~ "Pie Der",
+      izq==-1 ~ "Pie Izq",
       head==-1 ~ "Cabeza",
       is.na(type_id.y) ~ "No Remate"
     )
@@ -85,12 +85,12 @@ OptaMAPcorner <- function(df,home){
 
     ggtitle(paste("\nMapa de corners")) +
     # Aquí dibujamos el mapa de calor de los corners
-    stat_density2d(data=polar2,aes(x=f*106,y=g*70,fill = ..level..,alpha=..level..), geom="polygon",show.legend = FALSE) +
-    scale_fill_gradient(low="yellow", high="red",aesthetics = "fill") +
+    #stat_density2d(data=polar2,aes(x=f*106,y=g*70,fill = ..level..,alpha=..level..), geom="polygon",show.legend = FALSE) +
+    #scale_fill_gradient(low="yellow", high="red",aesthetics = "fill") +
     # dejo comentado la linea siguiente para el futuro, dado que con ella dibujamos la flecha del lanzamiento de corner
-    #geom_curve(data=polar2,aes(x=x*106, y=y*70, xend = f*106, yend = g*70),curvature = -0.1,arrow = arrow(length = unit(0.01, "npc")))+
+    geom_curve(data=polar2,aes(x=x*106, y=y*70, xend = f*106, yend = g*70,colour=tipo_Remate),curvature = -0.1,arrow = arrow(length = unit(0.01, "npc")))+
     #Dibujamos los remates
-    geom_point(data=polar2,aes(x = f*106, y=g*70,shape=tipo_Remate,colour=Remate),size=3,stroke = 1)+
+    geom_point(data=polar2,aes(x = f*106, y=g*70,shape=Remate,colour=tipo_Remate),size=3,stroke = 1)+
     #metemos la leyenda abajo
     theme(legend.position="bottom")
 

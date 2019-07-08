@@ -36,6 +36,16 @@ Para poder probar las funciones de la libreria se ha instalado en `..\R\R-3.5.1\
 - Stats. Es el XML con las estadísticas de toda la temporada de un equipo
 - SRML. Es el XMl con estadísticas de un partido
 
+#Versiones
+Versión 0.1.1
+- Se corregido la leyenda de OptaMAPcontras
+- Se ha cambiado OptaMAPcorner por flechas
+- Se ha añadido la función OptaMAParrowpass para visualizar pases como flechas por jugador
+- Actualizado las viñetas, ayudas y Readme
+- Se ha mejorado OptaMAPshoot marcando el pie izquierdo y derecho del tirador
+- Se ha añadido la función OptaMAPshoot2 que visualiza los disparos desde una vista aérea
+- Se han ajustado los radar plot por posición
+
 ## Instalación y Ayuda
 Para instalar el paquete desde Github:
 ```{r eval=FALSE}
@@ -56,6 +66,7 @@ Para conocer cada función y como se usa cada una también puedes usar "?" segui
 la ayuda en la pestaña de Help de RStudio. Si apretas F1 con el cursor puesto en la función también se despliega en la ayuda:
 
 ```{r eval=FALSE}
+?OptaMAParrowpass
 ?OptaMAPcontras
 ?OptaMAPcorner
 ?OptaMAPdfrontpass
@@ -67,7 +78,8 @@ la ayuda en la pestaña de Help de RStudio. Si apretas F1 con el cursor puesto e
 ?OptaMAPposesion
 ?OptaMAPposesionzonal
 ?OptaMAPradarevent
-?OptaMAPshoot 
+?OptaMAPshoot
+?OptaMAPshoot2
 ?OptaXMLeventos
 ?OptaXMLpassmatrix
 ?OptaXMLposesion
@@ -166,7 +178,7 @@ Y quedaría:
 
 
 ```{r OPTAMAPCORNER, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("8.png")
+knitr::include_graphics("8_1.png")
 ```
 
 ## OptaMAPdirectpass
@@ -218,6 +230,23 @@ knitr::include_graphics("6.png")
 knitr::include_graphics("7.png")
 ```
 
+## OptaMAParrowpass
+
+Con estas funciones `OptaMAParrowpass(df,1)` podrás visualizar un mapa por jugador con su mapa de pases en función de su tipologia
+
+```{r eval=FALSE}
+#Pon la ruta donde tengas instsalada la libreria en mi caso:
+ruta_eventos<-c('C:/My Program Files/R/R-3.5.1/library/soccergraphR/data/f24.xml')
+df<-OptaXMLeventos(ruta_eventos)
+OptaMAParrowpass(df,1)
+```
+
+El df será el parseado con la función OPTAXMLEVENTOS
+
+```{r OptaMAParrowpass, echo=FALSE, fig.cap="Zonas desde donde pasan los jugadores", out.width = '100%'}
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/25.png")
+```
+
 
 ## OptaMAPshoot
 
@@ -236,7 +265,27 @@ OptaMAPshoot(df,1)
 Y quedaría:
 
 ```{r OPTAMAPSHOOT, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("5.png")
+knitr::include_graphics("5_1.png")
+```
+
+## OptaMAPshoot2
+
+Con esta función `OptaMAPshoot2(df,1))` podrás visualizar desde arriba los disparos realizados
+
+El df será el parseado con la función OPTAXMLEVENTOS:
+
+
+```{r eval=FALSE}
+#Pon la ruta donde tengas instsalada la libreria en mi caso:
+ruta_eventos<-c('C:/My Program Files/R/R-3.5.1/library/soccergraphR/data/f24.xml')
+df<-OptaXMLeventos(ruta_eventos)
+OptaMAPshoot2(df,1)
+```
+
+Y quedaría:
+
+```{r OPTAMAPSHOOT2, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("5_2.png")
 ```
 
 

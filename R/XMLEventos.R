@@ -7,6 +7,7 @@
 #' @export
 #'
 #' @import XML
+#' @import pdp
 #' @import ggplot2
 #' @import readr
 #' @import ggforce
