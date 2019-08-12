@@ -457,8 +457,39 @@ quedaría:
 
 <img src="vignettes/22.png" width="100%" />
 
+OptaMAPshootxG
+------------------
+
+Con esta función `OptaMAPshootxG()` creamos el mapa con los datos de los tiros de uno o dos equipos, calculando para cada disparo el xG y calculando el resultado a partir de los xG. La función en la consola te va pidiendo los datos para construir el campo con los tiros.
+
+``` r
+#Si la invocamos direcamente con 1 o 2 en función de los equipos.
+OptaMAPshootxG(1)
+```
+
+quedaría:
+
+<img src=vignettes/26.png" width="100%" />
+
+
+OptaMAPcampofutbol2
+------------------
+
+Con esta función `OptaMAPcampofutbol2()` creamos el campo de futbol y es llamada directamente desde cada función para dibujar el campo y poder detectar las coordenadas de un tiro fácilmente
+
+``` r
+#Si la invocamos direcamente
+OptaMAPcampofutbol2()
+```
+
+quedaría:
+
+<img src=vignettes/27.png" width="100%" />
+
+
+
+
 FUTURAS MEJORAS
 ---------------
 
--   INCLUIR UN MAPA CON EL MODELO XG (GOLES ESPERADOS)
 -   ANALIZAR EL RESTO DE FICHEROS
