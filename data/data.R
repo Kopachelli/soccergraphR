@@ -32,3 +32,8 @@
 #'
 #' FICHERO DE ESTADISTICAS DE UN PARTIDO
 "srml"
+
+#'#'#'#'#'#'#' MODELO
+#'
+#' FICHERO CON EL MODELO
+"xG_model.rda"
