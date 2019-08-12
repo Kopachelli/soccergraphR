@@ -1,14 +1,14 @@
 Package: soccergraphR
 Type: Package
 Title: Analysis and visualization from Opta XML data
-Version: 0.1.1
+Version: 0.1.2
 Author: Jesus Lagos
 Maintainer: Jesus Lagos Twitter:@VDOT_Spain <jelagmil@gmail.com> 
-Description: A partir de los ficheros proporcionados por OPTA en formato XML permite elaborar anA!lisis y visualizaciones    de grafos de pases, radar de pases, corners, tiros y mapas de calor de desde donde pasan y adonde pasan
+Description: A partir de los ficheros proporcionados por OPTA en formato XML permite elaborar analisis y visualizaciones de grafos de pases, radar de pases, corners, tiros y mapas de calor de desde donde pasan y adonde pasan
 License: GLP-2
 Encoding: ISO-8859-2
 LazyData: true
-Imports: ggplot2,XML,readr,ggforce,dplyr,pdp
+Imports: ggplot2,XML,readr,ggforce,dplyr,pdp,gbm
 RoxygenNote: 6.1.1
 Suggests: knitr,rmarkdown
 VignetteBuilder: knitr
