@@ -479,7 +479,7 @@ knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soc
 Con esta función `OptaMAPcampofutbol()` creamos el campo de futbol y es llamada directamente desde cada función para dibujar el campo. Este campo es similar al publicado por soccermatics y es que cuando una cosa está bien, ¿para qué cambiarla?
 
 ```{r eval=FALSE}
-#Si la invocamos direcamente:
+#Si la invocamos direcamente
 OptaMAPcampofutbol()
 ```
 quedaría:
@@ -488,8 +488,37 @@ quedaría:
 knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/22.png")
 ```
 
+## OptaMAPshootxG
+
+Con esta función `OptaMAPshootxG()` creamos el mapa con los datos de los tiros de uno o dos equipos, calculando para cada disparo el xG y calculando el resultado a partir de los xG.
+La función en la consola te va pidiendo los datos para construir el campo con los tiros.
+
+```{r eval=FALSE}
+#Si la invocamos direcamente con 1 o 2 en función de los equipos.
+OptaMAPshootxG(1)
+```
+quedaría:
+
+```{r OptaMAPshootxG, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/26.png")
+```
+
+## OptaMAPcampofutbol2
+
+Con esta función `OptaMAPcampofutbol2()` creamos el campo de futbol y es llamada directamente desde cada función para dibujar el campo y poder detectar las coordenadas de un tiro fácilmente
+
+```{r eval=FALSE}
+#Si la invocamos direcamente
+OptaMAPcampofutbol2()
+```
+quedaría:
+
+```{r OptaMAPcampofutbol2, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/27.png")
+```
+
 
 ## FUTURAS MEJORAS
 
-- INCLUIR UN MAPA CON EL MODELO XG (GOLES ESPERADOS)
+
 - ANALIZAR EL RESTO DE FICHEROS
