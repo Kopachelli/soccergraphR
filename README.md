@@ -1,4 +1,4 @@
-soccergraphR
+soccergraphR v.0.1.2
 ================
 Jesús Lagos @Vdot\_spain <jelagmil@gmail.com>
 2019-07-08
@@ -26,6 +26,9 @@ Para poder probar las funciones de la libreria se ha instalado en `..\R\R-3.5.1\
 
 Versiones
 =========
+Versión 0.1.2 
+-------------
+- Se ha incluido la función para realizar mapas con xG y el campo de coordenadas.
 
 Versión 0.1.1 
 -------------
