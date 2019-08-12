@@ -469,7 +469,7 @@ OptaMAPshootxG(1)
 
 quedaría:
 
-<img src=vignettes/26.png" width="100%" />
+<img src="vignettes/26.png" width="100%" />
 
 
 OptaMAPcampofutbol2
@@ -484,7 +484,7 @@ OptaMAPcampofutbol2()
 
 quedaría:
 
-<img src=vignettes/27.png" width="100%" />
+<img src="vignettes/27.png" width="100%" />
 
 
 
