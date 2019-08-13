@@ -13,7 +13,7 @@ OptaMAPshootxG <- function(numeroequipos){
     return(c("Debes seleccionar un número de equipos 1 ó 2"))
   }
 
-  save(xG_model, file = "xG_model.rda")
+  #save(xG_model, file = "xG_model.rda")
   load("xG_model.rda")
 
   if(numeroequipos==1 ){
@@ -94,8 +94,8 @@ OptaMAPshootxG <- function(numeroequipos){
     names(prueba)<-c('distancia','angulo','one2one','penalty','situacion_juego','parte_cuerpo','equipo')
     prueba$distancia <- as.numeric(as.character(prueba$distancia))
     prueba$angulo <- as.numeric(as.character(prueba$angulo))
-    prueba$GBM <- predict(xG_model, prueba, na.action = na.pass, type = "prob")[,"1"]
-    jj<-predict(xG_model, prueba, na.action = na.pass, type = "prob")
+    prueba$GBM <- caret::predict(xG_model, prueba, na.action = na.pass, type = "prob")[,"1"]
+
 
     prueba$x<-x
     prueba$y<-y
@@ -208,8 +208,8 @@ OptaMAPshootxG <- function(numeroequipos){
       names(prueba)<-c('distancia','angulo','one2one','penalty','situacion_juego','parte_cuerpo','equipo')
       prueba$distancia <- as.numeric(as.character(prueba$distancia))
       prueba$angulo <- as.numeric(as.character(prueba$angulo))
-      prueba$GBM <- predict(xG_model, prueba, na.action = na.pass, type = "prob")[,"1"]
-      jj<-predict(xG_model, prueba, na.action = na.pass, type = "prob")
+      prueba$GBM <- caret::predict(xG_model, prueba, na.action = na.pass, type = "prob")[,"1"]
+
 
       prueba$x<-x
       prueba$y<-y
@@ -296,8 +296,8 @@ OptaMAPshootxG <- function(numeroequipos){
       names(prueba)<-c('distancia','angulo','one2one','penalty','situacion_juego','parte_cuerpo','equipo')
       prueba$distancia <- as.numeric(as.character(prueba$distancia))
       prueba$angulo <- as.numeric(as.character(prueba$angulo))
-      prueba$GBM <- predict(xG_model, prueba, na.action = na.pass, type = "prob")[,"1"]
-      jj<-predict(xG_model, prueba, na.action = na.pass, type = "prob")
+      prueba$GBM <- caret::predict(xG_model, prueba, na.action = na.pass, type = "prob")[,"1"]
+
 
       prueba$x<-x
       prueba$y<-y
