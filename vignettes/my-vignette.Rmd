@@ -12,10 +12,11 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "man/Figuras/README-",
+  out.width = "100%"
 )
 ```
-
 La libreria soccergraphR esta pensada para todos aquellos que trabajen con los datos de OPTA y para que las personas que estén estudiando o quieran conocer los datos puedan analizarlos y hacer visualizaciones y análisis de los mismos. Con esta libreria podrás:
 
 - Parsear los xml de Opta (Hay 6 ficheros de ejemplo: f24, f28,2xpass,stats y srml)
@@ -46,6 +47,7 @@ Versión 0.1.1
 - Se ha añadido la función OptaMAPshoot2 que visualiza los disparos desde una vista aérea
 - Se han ajustado los radar plot por posición
 
+
 ## Instalación y Ayuda
 Para instalar el paquete desde Github:
 ```{r eval=FALSE}
@@ -57,7 +59,6 @@ Una vez instalado puedes leer la explicación de la libreria ejecutando:
 ```{r eval=FALSE}
 #Para que se abra en el navegador:
 browseVignettes("soccergraphR")
-
 #Para que se abra en la pestaña de Help de RStudio:
 vignette("my-vignette")
 ```
@@ -88,7 +89,7 @@ la ayuda en la pestaña de Help de RStudio. Si apretas F1 con el cursor puesto e
 
 Se vería así:
 ```{r pressure1, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("21.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/21.png")
 ```
 
 ## OptaXMLeventos
@@ -105,7 +106,7 @@ df<-OptaXMLeventos(ruta_eventos)
 Y así quedaría:
 
 ```{r pressure, echo=FALSE, fig.cap="A la izq XML de Opta, a la derecha convertido a dataframe", out.width = '100%'}
-knitr::include_graphics("3.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/3.png")
 ```
 
 ## OPTAXMLPASSMATRIX
@@ -123,7 +124,7 @@ df2<-OptaXMLpassmatrix(ruta_pases2)
 Y quedaría:
 
 ```{r OPTAXMLPASSMATRIX, echo=FALSE, fig.cap="A la izq XML de Opta, a la derecha convertido a dataframe", out.width = '100%'}
-knitr::include_graphics("1.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/1.png")
 ```
 
 ## OptaMAPmatrixpass
@@ -151,13 +152,13 @@ OptaMAPmatrixpass(df1,4)
 Y quedaría:
 
 ```{r OPTAMAPMATRIXMAP1, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("2_1.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/2_1.png")
 ```
 
 También puedes usar la función `grid.arrange(p1, p2,p4,p5,p6,p7,p8, nrow = 2)` si por ejemplo tienes 8 ficheros (no los hay en el paquete) y representar varios partidos a la vez:
 
 ```{r OPTAMAPMATRIXMAP2, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("2.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/2.png")
 ```
 
 ## OptaMAPcorner
@@ -178,7 +179,7 @@ Y quedaría:
 
 
 ```{r OPTAMAPCORNER, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("8_1.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/8_1.png")
 ```
 
 ## OptaMAPdirectpass
@@ -197,7 +198,7 @@ Y quedaría:
 
 
 ```{r OPTAMAPDIRECTPASS, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("4_1.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/4_1.png")
 ```
 
 También puedes usar la función `grid.arrange(p1, p2,p4,p5,p6,p7,p8, nrow = 2)` si por ejemplo tienes 8 ficheros (no los hay en el paquete) y representar varios partidos a la vez.
@@ -205,7 +206,7 @@ También puedes usar la función `grid.arrange(p1, p2,p4,p5,p6,p7,p8, nrow = 2)`
 El df será el parseado con la función OPTAXMLEVENTOS
 
 ```{r OPTAMAPDIRECTPASS2, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("4.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/4.png")
 ```
 
 
@@ -224,10 +225,10 @@ OptaMAPheatMapTo(df,1)
 El df será el parseado con la función OPTAXMLEVENTOS
 
 ```{r OPTAMAPHEATMAPFROM, echo=FALSE, fig.cap="Zonas desde donde pasan los jugadores", out.width = '100%'}
-knitr::include_graphics("6.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/6.png")
 ```
 ```{r OPTAMAPHEATMAPFROM2, echo=FALSE, fig.cap="Zonas adonde pasan los jugadores", out.width = '100%'}
-knitr::include_graphics("7.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/7.png")
 ```
 
 ## OptaMAParrowpass
@@ -265,7 +266,7 @@ OptaMAPshoot(df,1)
 Y quedaría:
 
 ```{r OPTAMAPSHOOT, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("5_1.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/5_1.png")
 ```
 
 ## OptaMAPshoot2
@@ -285,7 +286,7 @@ OptaMAPshoot2(df,1)
 Y quedaría:
 
 ```{r OPTAMAPSHOOT2, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("5_2.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/5_2.png")
 ```
 
 
@@ -317,7 +318,7 @@ OptaMAPposesion(df)
 Y quedaría:
 
 ```{r OPTAMAPPOSESION, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("9.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/9.png")
 ```
 
 ## OptaMAPposesionzonal
@@ -338,7 +339,7 @@ OptaMAPposesionzonal(df,1)
 Y quedaría:
 
 ```{r OptaMAPposesionzonal1, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("11.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/11.png")
 ```
 
 Si pasamos el parámetro 0 obtendremos el número de eventos en rangos de 15 minutos:
@@ -353,7 +354,7 @@ OptaMAPposesionzonal(df,0)
 Y quedaría:
 
 ```{r OptaMAPposesionzonal2, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("10.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/10.png")
 ```
 
 ## OptaXMLstats
@@ -369,7 +370,7 @@ df<-OptaXMLstats(ruta_stats)
 Y quedaría:
 
 ```{r OptaXMLstats, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("12.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/12.png")
 ```
 
 ## OptaMAPradarevent
@@ -389,11 +390,11 @@ OptaMAPradarevent(df,0)
 Y quedaría:
 
 ```{r OptaMAPradarevent1, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("14.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/14.png")
 ```
 
 ```{r OptaMAPradarevent2, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("15.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/15.png")
 ```
 
 ## OptaMAPanalisisdefensivo
@@ -412,7 +413,7 @@ OptaMAPanalisisdefensivo(df)
 Y quedaría:
 
 ```{r OptaMAPanalisisdefensivo, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("16.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/16.png")
 ```
 
 ## OptaMAPdfrontpass
@@ -432,7 +433,7 @@ OptaMAPdfrontpass(df,1,3,3)
 Y quedaría:
 
 ```{r OptaMAPdfrontpass, echo=FALSE, fig.cap="A la izquierda el grafo normal y a la derecha el grafo solo con pases adelantados para el mismo partido con mínimo de 3 pases y 3 metros", out.width = '100%'}
-knitr::include_graphics("17.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/17.png")
 ```
 
 
@@ -452,7 +453,7 @@ OptaMAPcontras(df,1)
 Y quedaría:
 
 ```{r OptaMAPcontras, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("19.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/19.png")
 ```
 
 ## OptaMAPmatrixpasscluster
@@ -471,7 +472,7 @@ Y quedaría:
 
 
 ```{r OptaMAPmatrixpasscluster, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("20.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/20.png")
 ```
 
 ## OptaMAPcampofutbol
@@ -479,18 +480,46 @@ knitr::include_graphics("20.png")
 Con esta función `OptaMAPcampofutbol()` creamos el campo de futbol y es llamada directamente desde cada función para dibujar el campo. Este campo es similar al publicado por soccermatics y es que cuando una cosa está bien, ¿para qué cambiarla?
 
 ```{r eval=FALSE}
-#Si la invocamos direcamente:
+#Si la invocamos direcamente
 OptaMAPcampofutbol()
 ```
 quedaría:
 
 ```{r OptaMAPcampofutbol, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("22.png")
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/22.png")
+```
+
+## OptaMAPshootxG
+
+Con esta función `OptaMAPshootxG()` creamos el mapa con los datos de los tiros de uno o dos equipos, calculando para cada disparo el xG y calculando el resultado a partir de los xG.
+La función en la consola te va pidiendo los datos para construir el campo con los tiros.
+
+```{r eval=FALSE}
+#Si la invocamos direcamente con 1 o 2 en función de los equipos.
+OptaMAPshootxG(1)
+```
+quedaría:
+
+```{r OptaMAPshootxG, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/26.png")
+```
+
+## OptaMAPcampofutbol2
+
+Con esta función `OptaMAPcampofutbol2()` creamos el campo de futbol y es llamada directamente desde cada función para dibujar el campo y poder detectar las coordenadas de un tiro fácilmente
+
+```{r eval=FALSE}
+#Si la invocamos direcamente
+OptaMAPcampofutbol2()
+```
+quedaría:
+
+```{r OptaMAPcampofutbol2, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("C:/Users/jlagosmi/Desktop/MASTER BIG DATA/PAQUETE_R/soccergraphR/vignettes/27.png")
 ```
 
 
 ## FUTURAS MEJORAS
 
-- INCLUIR UN MAPA CON EL MODELO XG (GOLES ESPERADOS)
-- ANALIZAR EL RESTO DE FICHEROS
 
+- ANALIZAR EL RESTO DE FICHEROS
