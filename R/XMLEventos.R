@@ -12,6 +12,7 @@
 #' @import readr
 #' @import ggforce
 #' @import dplyr
+#' @import caret
 #' @importFrom magrittr %>%
 
 OptaXMLeventos <- function(evento,...){
