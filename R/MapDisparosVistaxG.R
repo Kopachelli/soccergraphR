@@ -94,7 +94,7 @@ OptaMAPshootxG <- function(numeroequipos){
     names(prueba)<-c('distancia','angulo','one2one','penalty','situacion_juego','parte_cuerpo','equipo')
     prueba$distancia <- as.numeric(as.character(prueba$distancia))
     prueba$angulo <- as.numeric(as.character(prueba$angulo))
-    prueba$GBM <- caret::predict(xG_model, prueba, na.action = na.pass, type = "prob")[,"1"]
+    prueba$GBM <- predict(xG_model, prueba, na.action = na.pass, type = "prob")[,"1"]
 
 
     prueba$x<-x
