@@ -46,7 +46,7 @@ Instalación y Ayuda
 Para instalar el paquete desde Github:
 
 ``` r
-devtools::install_github('jelagmil/soccergraphR', build_opts = c("--no-resave-data", "--no-manual"),build_vignettes = TRUE)
+devtools::install_github('jelagmil/soccergraphR', build_opts = c("--no-resave-data", "--no-manual"))
 library(soccergraphR)
 ```
 
