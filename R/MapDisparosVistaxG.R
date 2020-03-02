@@ -14,7 +14,8 @@ OptaMAPshootxG <- function(numeroequipos){
   }
 
   #save(xG_model, file = "xG_model.rda")
-  load("xG_model.rda")
+  
+  load(paste(system.file(package="soccergraphR"),"/xG_model.rda",sep=''))
 
   if(numeroequipos==1 ){
     equipo1 <- readline("Escribe el nombre del equipo 1: ")
